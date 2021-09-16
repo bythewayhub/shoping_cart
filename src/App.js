@@ -2,14 +2,11 @@ import React, {useState} from 'react';
 import './App.css';
 import Header from "./components/Header";
 import Main from "./components/Main";
-import * as constants from "./constants";
+import * as constants from "./utils/constants";
 import Cart from "./components/Cart";
+import { getTotalQuantity } from './utils/Calculate';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-
-const getTotalQuantity = cartItems => cartItems.reduce((total, elem) => {
-    total += elem.qty;
-    return total
-}, 0)
 
 function App() {
     const [cartItems, setCartItems] = useState([]);

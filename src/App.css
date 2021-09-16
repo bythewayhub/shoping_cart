@@ -12,6 +12,7 @@ button {
   padding: 10px;
   margin-left: 15px;
 }
+
 .addbtn{
   margin: 0.1rem;
   border: 1px;
@@ -21,26 +22,26 @@ button {
   font-size: 12px;
   padding: 7px;
 }
-.products{
 
+.products{
   text-align: center;
   display: inline-block;
   align-items: center;
   padding-left: 74px;
   justify-content: center;
-
 }
 .items{
   font-size: 30px;
   text-align: center;
-
 }
 .items_products{
   height: 800px;
 }
+
 button:active{
   transform: scale(0.95);
 }
+
 .products-item{
   font-size: 20px;
   text-align: center;

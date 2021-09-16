@@ -1,5 +1,5 @@
 import React from 'react';
-import {data} from "../constants";
+import {data} from "../utils/constants";
 
 
 export default function Product(props) {

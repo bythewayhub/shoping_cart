@@ -1,8 +1,8 @@
-import harry from './components/img/harry.jpg';
-import lotr from './components/img/the_return_of_the_king.jpg';
-import loli from './components/img/lolita.jpg';
-import jane from './components/img/jane_eyre.jpeg';
-import master from './components/img/the_master_and_margarita.png';
+import harry from '../assets/static/img/harry.jpg';
+import lotr from '../assets/static/img/the_return_of_the_king.jpg';
+import loli from '../assets/static/img/lolita.jpg';
+import jane from '../assets/static/img/jane_eyre.jpeg';
+import master from '../assets/static/img/the_master_and_margarita.png';
 
 export const data = {
     product:[
@@ -41,5 +41,6 @@ export const data = {
     currency: '$',
 
 }
+
 export const PAGE_PRODUCTS = 'products';
 export const PAGE_CART = 'cart';
