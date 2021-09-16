@@ -5,7 +5,7 @@ import jane from '../assets/static/img/jane_eyre.jpeg';
 import master from '../assets/static/img/the_master_and_margarita.png';
 
 export const data = {
-    product:[
+    products:[
         {
             id: '1',
             name:'Harry Potter',

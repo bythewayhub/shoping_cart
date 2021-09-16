@@ -1,8 +1,10 @@
 import React from 'react';
 import Product from "./Product";
+import * as constants from "../utils/constants";
 
 export default function Main(props) {
-    const {products, onAdd} = props;
+    const {onAdd} = props;
+    const {products} = constants.data;
     return (
         <main>
             <h2 className='items'>Products</h2>

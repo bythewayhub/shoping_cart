@@ -1,26 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap');
 main{
   margin: auto;
 }
-Header {
+
+a{
+  width: 6rem;
+  color: black;
+  text-decoration: none;
+  letter-spacing: .1em;
+  transition: text-shadow .3s;
+}
+.header {
   background: #1aae7c;
-  height: 80px;
+  height: 79px;
   padding-top: 20px;
   text-align: center;
+  justify-content: center;
+  box-sizing: border-box
+
 }
-button {
+.buttons {
   font-size: 20px;
-  padding: 10px;
-  margin-left: 15px;
+  padding: 8px;
+  color: black;
+  display: inline-block;
+  justify-content: center;
+  background: #1aae7c;
+  text-align: center;
+  font-weight: bold;
+  border: solid 1px #1aae7c;
 }
+.buttons:active{
+  font-weight: bold;
+  background-color:#fff;
+  transform: scale(0.95);
+}
+.buttons:visited{
+  font-weight: bold;
+}
+.buttons:hover{
+  border: solid 1px #fff;
+  background-color:#fff;
+  font-weight: bold;
+  text-shadow: 0 0 .55px #333, 0 0 .55px #333;
+  border-radius: 25% 10%;
+}
+
 
 .addbtn{
   margin: 0.1rem;
   border: 1px;
   width: 40%;
-  background-color: #b1ffb9;
+  background-color: #1aae7c;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   padding: 7px;
+}
+
+.addbtn:hover{
+  font-weight: bold;
+}
+.addbtn:active{
+  transform: scale(0.95);
 }
 
 .products{
@@ -36,10 +77,6 @@ button {
 }
 .items_products{
   height: 800px;
-}
-
-button:active{
-  transform: scale(0.95);
 }
 
 .products-item{
@@ -73,7 +110,9 @@ button:active{
 }
 .count_items{
   font-size: 20px;
-  font-weight: bold;
+  padding: 2px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 .cart_img{
   height: 200px;
@@ -87,7 +126,6 @@ button:active{
 
 }
 .cart-row{
-
   text-align: center;
   display: flex;
   margin: 0;

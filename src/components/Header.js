@@ -1,30 +1,52 @@
 import React from 'react';
-import {PAGE_PRODUCTS, PAGE_CART} from "../utils/constants";
-import {BrowserRouter as Router, Link, NavLink, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, NavLink, Route, Switch} from "react-router-dom";
 import Main from "./Main";
 import Cart from "./Cart";
-import Product from "./Product";
 
 
 export default function Header(props) {
-  //  const {countCartItems, setPage} = props;
-    //
-    // const navigateTo = nextPage => {
-    //     setPage(nextPage);
-    // };
+    const {countCartItems, setCartItems, cartItems} = props;
+
+    const onAdd = (product) => {
+        const exist = cartItems.find((x) => x.id === product.id);
+        if (exist) {
+            setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty + 1} : x
+                )
+            );
+        } else {
+            setCartItems([...cartItems, {...product, qty: 1}]);
+        }
+    };
+
+    const onRemove = (product) => {
+        const exist = cartItems.find((x) => x.id === product.id);
+        if (exist.qty === 1) {
+            setCartItems(cartItems.filter((x) => x.id !== product.id));
+        } else {
+            setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty - 1} : x
+                )
+            );
+        }
+    }
 
     return (
         <Router>
-            <div>
-                <h2>View Products</h2>
-                <Link to='/'>Home</Link>
-                <NavLink to='/products'>Products</NavLink>
-                <NavLink to='/cart'>Cart</NavLink>
+            <div className='header'>
 
+                <div>
+                <div className='buttons'>
+                <NavLink to='/'>Products</NavLink>
+                </div>
+                <div className='buttons'>
+                <NavLink to='/cart'>Cart{' '}{countCartItems ? (
+                    <span className='count_items'>{`(${countCartItems})`}</span>) : ('')}</NavLink>
+                </div>
+                </div>
                 <hr/>
+
                 <Switch>
-                    <Route exact path='/' component={Product}/>
-                    <Route exact path='/cart' component={Cart}/>
+                    <Route exact path='/'><Main onAdd={onAdd}/></Route>
+                    <Route exact path='/cart'><Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/></Route>
                 </Switch>
             </div>
         </Router>
